@@ -1,5 +1,6 @@
 package sample;
 
+import conversiones.Conversion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -10,7 +11,10 @@ public class Controller {
     @FXML Label lblTitulo;
 
     public void evento1(ActionEvent event){
-        int dias=Integer.parseInt(edad.getText())*365;
-        lblTitulo.setText("Has vivido"+dias+"días");
+        Conversion td= new Conversion();
+
+        int numero=Integer.parseInt(edad.getText());
+        String res=td.binario(numero);
+        lblTitulo.setText(res);
     }
 }
