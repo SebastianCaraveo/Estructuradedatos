@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Label" />
+      <TextField fx:id="txtArreglo1" layoutX="14.0" layoutY="38.0" />
+      <Button layoutX="171.0" layoutY="38.0" mnemonicParsing="false" onAction="#insertar1" text="Insertar" />
+      <Button layoutX="14.0" layoutY="74.0" mnemonicParsing="false" onAction="#procesar1" prefHeight="25.0" prefWidth="210.0" text="Procesar" />
+      <ListView fx:id="lista1" layoutX="14.0" layoutY="119.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="269.0" layoutY="14.0" text="Label" />
+      <TextField fx:id="txtArreglo2" layoutX="269.0" layoutY="38.0" />
+      <Button layoutX="427.0" layoutY="38.0" mnemonicParsing="false" onAction="#insertar2" text="Insertar" />
+      <Button layoutX="271.0" layoutY="74.0" mnemonicParsing="false" onAction="#procesar2" prefHeight="25.0" prefWidth="210.0" text="Procesar" />
+      <ListView fx:id="lista2" layoutX="269.0" layoutY="119.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
