@@ -1,0 +1,36 @@
+.fondo{
+ -fx-background-image: url("./img/fondoTaco.jpg");
+ -fx-background-size: cover ;
+}
+.buttoninsertar{
+ -fx-background-color: #E5F04C;
+ -fx-background-radius: 30px;
+}
+.bordes{
+ -fx-background-radius: 15px;
+ -fx-background-color: #5C323E;
+}
+
+.cabecera{
+ -fx-background-color: #874E2B;
+}
+
+.bttn2{
+ -fx-background-color:#0E2859;
+ -fx-background-radius: 30px;
+}
+
+.fondo2{
+ -fx-background-color:#DCDCDC;
+}
+.fondo3{
+ -fx-background-color: #434237;
+}
+
+.bttnback{
+-fx-background-color: #9E9E94;
+-fx-background-radius: 50px;
+}
+.cmbOpciones{
+ -fx-background-radius: 50px;
+}
