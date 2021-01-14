@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/EstructuradeDatos.iml" filepath="$PROJECT_DIR$/.idea/EstructuradeDatos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Estructuras no lineales/Estructuras no lineales.iml" filepath="$PROJECT_DIR$/Estructuras no lineales/Estructuras no lineales.iml" />
+    </modules>
+  </component>
+</project>
