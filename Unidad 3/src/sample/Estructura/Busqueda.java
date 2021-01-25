@@ -35,4 +35,22 @@ public class Busqueda {
         return posicion;
     }
 
+    /*public int[] busquedaBinaria(int[] numero) {
+
+        int mayor, pos;
+        for(int i = 0; i < per.length; i++) {
+            for(int j = 0; j<matriz[i].length; j++) {
+                for(int x= 0; x<matriz.length; x++) {
+                    for(int y = 0; y < matriz[x].length; y++) {
+                        if(matriz[i][j]<matriz[x][y]) {
+                            mayor = matriz[i][j];
+                            matriz[i][j]= matriz[x][y];
+                            matriz[x][y]= mayor;
+                        }
+                    }
+                }
+            }
+        }
+        return -1;
+    }*/
 }
