@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import sample.Estructura.Busqueda;
 
 
 import java.io.IOException;
@@ -17,6 +18,12 @@ import java.io.IOException;
 public class Controller {
     @FXML TextField txtUsuario;
     @FXML PasswordField txtContraseña;
+    String [][] arrayUsuarios=new String[3][3];
+    @FXML protected void initialize(){
+        arrayUsuarios[0][0]="Sebastian Caraveo";arrayUsuarios[0][1]="Admin";arrayUsuarios[0][2]="123";
+        arrayUsuarios[1][0]="Nitzia Ontiveros";arrayUsuarios[1][1]="Admin2";arrayUsuarios[1][2]="1234";
+        arrayUsuarios[2][0]="Rigoberto Loya";arrayUsuarios[2][1]="Empleado";arrayUsuarios[2][2]="012";
+    }
 
     public void login (ActionEvent event) {
         ingresar();
@@ -30,8 +37,11 @@ public class Controller {
     public void ingresar(){
         String u = txtUsuario.getText();
         String p = txtContraseña.getText();
-        if (u.equals("Admin") && p.equals("1111")) {
+        Busqueda busqueda= new Busqueda();
+        int indice =busqueda.secuencial(arrayUsuarios, u, p);
+        if (indice>=0) {
             try {
+                Main.nombreUsuario=arrayUsuarios[indice][0];
                 Parent root = FXMLLoader.load(getClass().getResource("PantallaCobro.fxml"));
                 Scene scene=new Scene(root);
                 Main.stage.setScene(scene);

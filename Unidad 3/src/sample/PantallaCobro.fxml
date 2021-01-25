@@ -44,7 +44,7 @@
                   <Insets top="10.0" />
                </HBox.margin>
             </ImageView>
-            <Label prefHeight="17.0" prefWidth="150.0" text="Sebastian Caraveo" textFill="WHITE">
+            <Label fx:id="txtNombreUser" prefHeight="17.0" prefWidth="150.0" text="." textFill="WHITE">
                <HBox.margin>
                   <Insets right="1.0" top="20.0" />
                </HBox.margin>
@@ -104,13 +104,13 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#menu" prefHeight="25.0" prefWidth="179.0" styleClass="bttn2" text="Menú" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#menu" prefHeight="25.0" prefWidth="57.0" styleClass="bttn2" text="Menú" textFill="WHITE">
                      <HBox.margin>
-                        <Insets left="25.0" right="5.0" top="5.0" />
+                        <Insets left="15.0" right="5.0" top="5.0" />
                      </HBox.margin></Button>
-                  <Button mnemonicParsing="false" onAction="#finalizar" prefHeight="25.0" prefWidth="167.0" styleClass="bttn2" text="Finalizar" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#finalizar" prefHeight="25.0" prefWidth="67.0" styleClass="bttn2" text="Finalizar" textFill="WHITE">
                      <HBox.margin>
-                        <Insets right="25.0" top="5.0" />
+                        <Insets right="5.0" top="5.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -122,11 +122,11 @@
       </VBox>
    </center>
    <right>
-      <VBox prefHeight="363.0" prefWidth="180.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="272.0" prefWidth="180.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Tacos">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" top="5.0" />
+                  <Insets left="5.0" right="5.0" top="20.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="44.0" prefWidth="180.0">
@@ -162,7 +162,12 @@
                   </Spinner>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#insertarPedido" prefHeight="25.0" prefWidth="111.0" styleClass="bttn2" text="Insertar" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#ordenarPlatillos" prefHeight="25.0" prefWidth="161.0" styleClass="bttn2" text="Ordenar x Precio" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#insertarPedido" prefHeight="25.0" prefWidth="163.0" styleClass="bttn2" text="Insertar" textFill="WHITE">
                <VBox.margin>
                   <Insets left="30.0" right="30.0" top="5.0" />
                </VBox.margin>
@@ -177,12 +182,48 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" onAction="#guardarPedido" prefHeight="25.0" prefWidth="136.0" styleClass="bttn2" text="Guardar Pedido" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#guardarPedido" prefHeight="40.0" prefWidth="120.0" styleClass="bttn2" text="Guardar Pedido" textFill="WHITE">
                <VBox.margin>
-                  <Insets bottom="15.0" left="30.0" right="30.0" top="40.0" />
+                  <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
                </VBox.margin>
             </Button>
          </children>
+         <BorderPane.margin>
+            <Insets top="35.0" />
+         </BorderPane.margin>
       </VBox>
    </right>
+   <bottom>
+      <VBox prefHeight="62.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="0.0" prefWidth="500.0">
+               <children>
+                  <TextField fx:id="txtVenta">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#insertarVenta" text="Insertar">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#ordenarVenta" text="Ordenar">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="lblVentas" prefHeight="17.0" prefWidth="174.0" text="Label">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
 </BorderPane>

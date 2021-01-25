@@ -8,11 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import sample.Estructura.Busqueda;
 import sample.Estructura.ItemPedidos;
+import sample.Estructura.Ordenamiento;
 import sample.Estructura.Pedido;
 
 
-
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -22,14 +24,17 @@ import java.util.Stack;
 public class ControllerCobro {
     @FXML ComboBox cmbPlatillos, cmbBebidas, cmbOpc;
     @FXML TableView tabla;
-    @FXML TextField  txtNombre;
-    @FXML Label nombrePedido;
+    @FXML TextField  txtNombre, txtVenta,txtbuscar;
+    @FXML Label nombrePedido, lblVentas;
     @FXML Spinner<Integer> cantP, cantB;
+    @FXML Label txtNombreUser;
     final int initialvalue=1;
     SpinnerValueFactory<Integer> num=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,99,initialvalue);
     final int initialvalue2=1;
     SpinnerValueFactory<Integer> num2=new SpinnerValueFactory.IntegerSpinnerValueFactory(1,99,initialvalue2);
     Stack<ItemPedidos> pila=new Stack<>();
+
+    int[] ventas=new int[5];
 
     LinkedList<String> listaBebidas=new LinkedList<>();
     LinkedList<String> listaPlatillos=new LinkedList<>();
@@ -42,27 +47,45 @@ public class ControllerCobro {
     Queue<ItemPedidos> cola=new LinkedList<>();
 
 
+    String[][] platillo={
+            {"Papa","10"},
+            {"Asada","15"},
+            {"Al pastor", "12"},
+            {"Cubanita","15"},
+            {"Camarón","18"},
+            {"Carnitas Michoacanas", "15"},
+            {"Pescado","12"}
+
+    };
+
+    String[] personapedido=new String[1];
 
     @FXML protected void initialize(){
+        txtNombreUser.setText(Main.nombreUsuario);
         columnaBebida.setCellValueFactory(new PropertyValueFactory<Pedido, String>("bebida"));
         columnaCantBebida.setCellValueFactory(new PropertyValueFactory<Pedido, String>("cantbebida"));
         columnaPlatillos.setCellValueFactory(new PropertyValueFactory<Pedido, String>("platillo"));
         columnaCantPlatillos.setCellValueFactory(new PropertyValueFactory<Pedido, String>("cantplatillo"));
         tabla.getColumns().addAll(columnaBebida, columnaCantBebida,columnaPlatillos,columnaCantPlatillos);
         tabla.setItems(listaPedidos);
-        listaBebidas.add("Coca cola");
+       listaBebidas.add("Coca cola");
         listaBebidas.add("Agua");
         listaBebidas.add("Sprite");
         listaBebidas.add("Limonada");
         listaBebidas.add("Manzanita");
         listaBebidas.add("Fanta Naranja");
-        listaPlatillos.add("Al Pastor");
+       /* listaPlatillos.add("Al Pastor");
         listaPlatillos.add("Asada");
         listaPlatillos.add("Papa");
         listaPlatillos.add("Cubanita");
         listaPlatillos.add("Pescado");
         listaPlatillos.add("Camarón");
-        listaPlatillos.add("Carntias Michoanas");
+        listaPlatillos.add("Carntias Michoanas");*/
+
+       for(int x=0;x<platillo.length;x++){
+           listaPlatillos.add(platillo[x][0]);
+       }
+
         ////////lista de opciones/////
         listaOpciones.add("Información");
         listaOpciones.add("Cerrar Sesión");
@@ -138,9 +161,43 @@ public class ControllerCobro {
 
     }
 
+    int cont=0;
+    public void insertarVenta(){
+        ventas[cont]=Integer.parseInt(txtVenta.getText().toString());
+        System.out.println(txtVenta.getText());
+        cont++;
+    }
 
+    public void ordenarVenta(){
+        Ordenamiento ordenar=new Ordenamiento();
+        int[] ordenado=ordenar.burbuja(ventas);
+        String todo="";
+        for(int x=0;x<ordenado.length;x++) todo += " "+ ordenado[x]+", ";
+        lblVentas.setText(todo);
+    }
 
+    public void ordenarPlatillos(){
+        Ordenamiento ordenar=new Ordenamiento();
+        cmbPlatillos.getItems().clear();
+        listaPlatillos.clear();
+        String[][] ordenado=ordenar.burbujaArray(platillo);
+        for(int x=0;x<ordenado.length;x++){
+            listaPlatillos.add(ordenado[x][0]);
+            cmbPlatillos.getItems().add(ordenado[x][0]);
+        }
+    }
 
+  /*  public void buscarcliente(){
+        String busqueda;
+        Busqueda busqueda1=new Busqueda();
+        tabla.getItems().clear();
+        String[] ordenado=busqueda1.binario(personapedido);
+        {
+            for (int x = 0; x < ordenado; x++)
+                tabla.setItems((ObservableList) txtbuscar);
+        }
+        }
 
+*/
 }
 
